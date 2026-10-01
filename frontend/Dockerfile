@@ -19,6 +19,6 @@ ENV VITE_APP_NAME=$VITE_APP_NAME
 RUN npm run build
 
 # ---- prod: nginx serving the built SPA (nginx.conf mounted via compose) ----
-FROM nginx:1.30-alpine AS prod
+FROM nginx:1.31-alpine AS prod
 COPY --from=build /app/dist /usr/share/nginx/html
 EXPOSE 80
